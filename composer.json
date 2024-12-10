@@ -1,0 +1,20 @@
+{
+    "name": "wguimaraes/dto",
+    "description": "This is a simple Laravel package for create DTO classes to help manage data normalization.",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "wguimaraes\\Dto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "William Guimarães",
+            "email": "william.guimaraes.work@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    }
+}
