@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Wguimaraes;
 
 abstract class BaseDTO
 {
