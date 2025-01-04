@@ -9,9 +9,9 @@ abstract class BaseDTO
         $instance = new static();
         foreach ($data as $key => $value) {
             if (property_exists($instance, $key)) {
-                if(self::isDTO($instance, $key)){
+                if($dtoInstance = self::isDTO($instance, $key)){
                     if(is_array($value)){
-                        $instance->$key = $instance->$key->fromArray($value);
+                        $instance->$key = $dtoInstance::fromArray($value);
                     }
                 }else{
                     $instance->$key = $value;
@@ -45,14 +45,15 @@ abstract class BaseDTO
         return $array;
     }
 
-    protected static function isDTO($instance, $propertieName){
+    protected static function isDTO($instance, $propertieName)
+    {
         $reflection = new \ReflectionMethod($instance, '__construct');
         $parameters = $reflection->getParameters();
         foreach($parameters as $parameter){
             if($parameter->getName() == $propertieName){
                 $typeName = $parameter->getType()->getName();
                 if(class_exists($typeName) && (new $typeName) instanceof BaseDTO){
-                    return true;
+                    return $typeName;
                 }
             }
         }
