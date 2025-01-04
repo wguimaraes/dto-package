@@ -1,6 +1,6 @@
 <?php
 
-namespace Wguimaraes;
+namespace Wguimaraes\Dto;
 
 abstract class BaseDTO
 {
