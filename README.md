@@ -1,8 +1,5 @@
 # A Simple Package to Help Create DTOs (Data Transfer Objects)
 
-# !!Attention!!
-## Not ready for use yet!!!
-
 ## Getting started
 
 To install this pachage just add the dependency in your composer.json file or execute the command:
